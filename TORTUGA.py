@@ -54,5 +54,3 @@ def movimiento():
         x=cabeza.xcor() 
         cabeza.setx(x+20) 
 
-     
-ventana.mainloop()   
