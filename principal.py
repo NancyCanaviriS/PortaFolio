@@ -2,6 +2,7 @@ import TORTUGA
 import random
 import time
 
+partes=[]
 cabeza=TORTUGA.cabeza
 comida=TORTUGA.comida
 
@@ -20,6 +21,10 @@ while True:
         x=random.randint(-14,14)
         y=random.randint(-14,14)
         comida.goto(x*20,y*20)
+        nueva_parte=TORTUGA.creacion_elemento('square','yellow')
+        nueva_parte.direccion='quieta'
+        partes.append(nueva_parte)
+
     #llamar al movimento
     TORTUGA.movimiento()
     #retardo
