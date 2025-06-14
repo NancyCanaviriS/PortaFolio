@@ -25,6 +25,18 @@ while True:
         nueva_parte.direccion='quieta'
         partes.append(nueva_parte)
 
+    #mover partes
+    partes_totales=len(partes)
+    for i in range(partes_totales-1,0,-1):
+        x=partes[i-1].xcor()
+        y=partes[i-1].ycor()
+        partes[i].goto(x,y)
+    if partes_totales > 0:
+        x=cabeza.xcor()
+        y=cabeza.ycor()
+        partes[0].goto(x,y)
+
+
     #llamar al movimento
     TORTUGA.movimiento()
     #retardo
