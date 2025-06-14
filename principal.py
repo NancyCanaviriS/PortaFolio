@@ -6,16 +6,24 @@ partes=[]
 cabeza=TORTUGA.cabeza
 comida=TORTUGA.comida
 
+#funcion game over
+def game_over():
+    time.sleep(1)
+    cabeza.goto(0,0)
+    cabeza.direccion='quieta'
+    for i in partes:
+        i.hideturtle()
+    partes.clear()
+
+
 while True:
     #actualizacion ventana
     TORTUGA.ventana.update()
 
     #choque de bordes
     if cabeza.xcor() > 280 or cabeza.xcor() < -280 or cabeza.ycor() > 280 or cabeza.ycor() < -280:
-        time.sleep(1)
-        cabeza.goto(0,0)
-        cabeza.direccion='quieta'
-        time.sleep(1)
+        game_over()
+
     #colision comida
     if cabeza.distance(comida) < 20: 
         x=random.randint(-14,14)
@@ -36,8 +44,12 @@ while True:
         y=cabeza.ycor()
         partes[0].goto(x,y)
 
-
     #llamar al movimento
     TORTUGA.movimiento()
+
+    #colision del cuerpo
+    for i in partes:
+        if i.distance(cabeza) < 20:
+            game_over()
     #retardo
     time.sleep(0.05)
