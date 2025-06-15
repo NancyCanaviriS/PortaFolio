@@ -19,7 +19,11 @@ cabeza=creacion_elemento('square','blue')
 cabeza.direccion='quieta'
 comida=creacion_elemento('circle','red')
 comida.goto(0,90)
-
+#creacion de texto(puntaje)
+texto=creacion_elemento(None,'white')
+texto.hideturtle()
+texto.goto(0,260)
+texto.write('Puntaje:0  Mejor puntaje:0',align='center' , font=('Courier',20,'normal'))
 #funciones
 def arriba():
     cabeza.direccion='arriba'
