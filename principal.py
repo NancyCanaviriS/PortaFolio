@@ -29,6 +29,11 @@ while True:
         x=random.randint(-14,14)
         y=random.randint(-14,14)
         comida.goto(x*20,y*20)
+        #colores
+        if len(partes)%2 !=0:
+            colores='blue'
+        else:
+            colores='yellow'
         nueva_parte=TORTUGA.creacion_elemento('square','yellow')
         nueva_parte.direccion='quieta'
         partes.append(nueva_parte)
