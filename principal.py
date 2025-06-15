@@ -5,6 +5,7 @@ import time
 partes=[]
 cabeza=TORTUGA.cabeza
 comida=TORTUGA.comida
+texto=TORTUGA.texto 
 
 #funcion game over
 def game_over():
