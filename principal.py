@@ -5,6 +5,7 @@ import time
 partes=[]
 cabeza=TORTUGA.cabeza
 comida=TORTUGA.comida
+
 texto=TORTUGA.texto 
 #variables de puntaje
 puntaje=0
@@ -25,22 +26,23 @@ while True:
     TORTUGA.ventana.update()
 
     #choque de bordes
-    if cabeza.xcor() > 280 or cabeza.xcor() < -280 or cabeza.ycor() > 280 or cabeza.ycor() < -280:
+    if cabeza.xcor() > 280 or cabeza.xcor() < -280 or cabeza.ycor() > 220 or cabeza.ycor() < -280:
         game_over()
 
     #colision comida
     if cabeza.distance(comida) < 20: 
         x=random.randint(-14,14)
-        y=random.randint(-14,14)
+        y=random.randint(-14,10)
         comida.goto(x*20,y*20)
         #colores
         if len(partes)%2 !=0:
             colores='blue'
         else:
             colores='yellow'
-        nueva_parte=TORTUGA.creacion_elemento('square','yellow')
+        nueva_parte=TORTUGA.creacion_elemento('square',colores)
         nueva_parte.direccion='quieta'
         partes.append(nueva_parte)
+
         #aumentar puntaje
         puntaje += 1
         if puntaje > mejor_puntaje:
