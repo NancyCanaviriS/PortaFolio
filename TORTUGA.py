@@ -5,6 +5,12 @@ ventana=turtle.Screen()
 ventana.title('Juego Snake')
 ventana.bgcolor('black')
 ventana.setup(width=600,height=600)
+#limite de ventana 
+barrera=turtle.Turtle
+barrera.goto(-300,240)
+barrera.pensize(2)
+barrera.pencolor('white')
+barrera.speed(2)
 #funcion creacion de elementos(tortuga)
 def creacion_elemento(forma,color):
     elemento=turtle.Turtle()
