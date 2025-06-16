@@ -6,6 +6,9 @@ partes=[]
 cabeza=TORTUGA.cabeza
 comida=TORTUGA.comida
 texto=TORTUGA.texto 
+#variables de puntaje
+puntaje=0
+mejor_puntaje=0
 
 #funcion game over
 def game_over():
@@ -39,7 +42,7 @@ while True:
         nueva_parte.direccion='quieta'
         partes.append(nueva_parte)
         #aumentar puntaje
-        puntaje+=1
+        puntaje += 1
         if puntaje > mejor_puntaje:
             mejor_puntaje=puntaje
         texto.clear()
