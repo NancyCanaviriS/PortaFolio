@@ -38,6 +38,13 @@ while True:
         nueva_parte=TORTUGA.creacion_elemento('square','yellow')
         nueva_parte.direccion='quieta'
         partes.append(nueva_parte)
+        #aumentar puntaje
+        puntaje+=1
+        if puntaje > mejor_puntaje:
+            mejor_puntaje=puntaje
+        texto.clear()
+        texto.write('Puntaje: {}  Mejor puntaje:{}'.format(puntaje,mejor_puntaje),
+                    align='center' , font=('Courier',20,'normal'))
 
     #mover partes
     partes_totales=len(partes)
