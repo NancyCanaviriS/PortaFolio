@@ -25,7 +25,19 @@ class pelotaP:
        self.y=winVert/2-self.alto/2
        self.dir_x=-self.dir_x
        self.dir_y=random.choice([-5,5])
-    
+  def rebotar(self):
+       if self.x<=-self.ancho:
+            self.reiniciar()
+            self.puntuacion_maqui+=1
+       if self.x>=winHori:
+            self.reiniciar()
+            self.puntuacion+=1
+       if self.y<=0:
+            self.dir_y=-self.dir_y
+       if self.y+self.alto>=winVert:
+            self.dir_y=self.dir_y
+                
+            
 
       
       
