@@ -18,7 +18,15 @@ class pelotaP:
         self.puntuacion=0
         self.puntuacion_maqui=0
   def movimiento(self):
-        self
+        self.x+=self.dir_x
+        self.y+=self.dir_y
+  def reiniciar(self):
+       self.x=winHori/2-self.ancho/2
+       self.y=winVert/2-self.alto/2
+       self.dir_x=-self.dir_x
+       self.dir_y=random.choice([-5,5])
+    
+
       
       
   
