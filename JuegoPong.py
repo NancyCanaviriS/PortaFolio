@@ -36,9 +36,12 @@ class pelotaP:
             self.dir_y=-self.dir_y
        if self.y+self.alto>=winVert:
             self.dir_y=self.dir_y
-                
+class raqueta:
+     def __init__(self):
+          self.imagen=pygame.image.load('raqueta.png').convert_alpha()
+          self.ancho,self.alto=self.imagen.get_size()
+          self.x=0
+          self.y=winVert/2-self.alto/2
+          self.dir_y=0
+     def movimiento(self):              
             
-
-      
-      
-  
