@@ -43,5 +43,9 @@ class raqueta:
           self.x=0
           self.y=winVert/2-self.alto/2
           self.dir_y=0
-     def movimiento(self):              
-            
+     def movimiento(self): 
+          self.y+=self.dir_y
+          if self.y<=0:
+               self.y=0
+          if self.y+self.alto>=winVert:
+             self.y=winVert-self.alto
