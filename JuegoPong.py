@@ -64,4 +64,43 @@ class raqueta:
               and pelota.y+pelota.alto>self.y
               and pelota.y<self.y+self.alto
           ):
-              
+              pelota.dir_x=pelota.dir_x
+              pelota.x=self.x+self.ancho
+     def  golpear_maqui(self,pelota):
+         if (
+              pelota.x+self.ancho>self.x
+              and pelota.x<self.x+self.ancho
+              and pelota.y+pelota.alto>self.y
+              and pelota.y<self.y+self.alto
+          ):
+              pelota.dir_x=pelota.dir_x
+              pelota.x=self.x-self.ancho
+def main():
+     pygame.init()
+     win=pygame.display.set_mode((winHori,winVert))
+     pygame.display.set_caption("Mi primer Juego Pong")
+     pelota=pelotaP("pong.png")
+     fuente=pygame.font.Font(None,60)
+     raqueta_1=raqueta()
+     raqueta_1.x=60
+     raqueta_2=raqueta()
+     raqueta_2.x=winHori-60-raqueta_2.ancho
+
+     jugando=True
+     while jugando:
+          pelota.movimiento()
+          pelota.rebotar()
+          raqueta_1.movimiento()
+          raqueta_2.movimiento_maqui(pelota)
+          raqueta_1.golpear_maqui(pelota)
+
+          win.fill(white)
+          win.blit(pelota.imagen,(pelota.x,pelota.y))
+          win.blit(raqueta_1.imagen,(raqueta_1.x,raqueta_1.y))
+          win.blit(raqueta_2.imagen,(raqueta_2.x,raqueta_2.y)) 
+          text=f"{pelota.puntuacion} : {pelota.puntuacion_maqui}"
+          letre=fuente.rendertes(text,False,negro)
+          win.blit(letre,(winHori/2-fuente.size(text)[0]/2,50))
+          for event in pygame.event.get():
+               if event.type==QUIT:
+                    jugando=False  
