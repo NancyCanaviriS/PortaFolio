@@ -49,3 +49,19 @@ class raqueta:
                self.y=0
           if self.y+self.alto>=winVert:
              self.y=winVert-self.alto
+     def movimiento_maqui(self):
+          if self.p>pelota.y:
+               self.dir_y=-3
+          elif self.y<pelota.y:
+               self.dir_y=+3
+          else :
+               self.dir_y=0
+          self.y+=self.dir_y
+     def  golpear(self,pelota):
+         if (
+              pelota.x<self.x+self.ancho
+              and pelota.x>self.x
+              and pelota.y+pelota.alto>self.y
+              and pelota.y<self.y+self.alto
+          ):
+              
