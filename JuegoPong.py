@@ -49,7 +49,7 @@ class raqueta:
                self.y=0
           if self.y+self.alto>=winVert:
              self.y=winVert-self.alto
-     def movimiento_maqui(self):
+     def movimiento_maqui(self,pelota):
           if self.p>pelota.y:
                self.dir_y=-3
           elif self.y<pelota.y:
@@ -108,4 +108,14 @@ def main():
                if event.key==pygame.k_w:
                     raqueta_1.dir_y=-5
                if event.key==pygame.k_s:
+                    raqueta_1.dir_y=5
+          if event.key==pygame.KEYUP:
+               if event.key==pygame.k_w:
                     raqueta_1.dir_y=0
+               if event.key==pygame.k_s:
+                    raqueta_1.dir_y
+          pygame.display.flip()
+          pygame.time.Clock().tick(fps)
+     pygame.quit()
+if  __name__== '_main_':
+     main()
