@@ -104,3 +104,8 @@ def main():
           for event in pygame.event.get():
                if event.type==QUIT:
                     jugando=False  
+          if event.type==pygame.KEYDOWN:
+               if event.key==pygame.k_w:
+                    raqueta_1.dir_y=-5
+               if event.key==pygame.k_s:
+                    raqueta_1.dir_y=0
