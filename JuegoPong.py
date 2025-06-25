@@ -109,7 +109,7 @@ def main():
                     raqueta_1.dir_y=-5
                if event.key==pygame.k_s:
                     raqueta_1.dir_y=5
-          if event.key==pygame.KEYUP:
+          if event.type==pygame.KEYUP:
                if event.key==pygame.k_w:
                     raqueta_1.dir_y=0
                if event.key==pygame.k_s:
